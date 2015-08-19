@@ -10,6 +10,7 @@ development:
   <<: *connection
   database: workshops_development
 
-test: &test
-  <<: *connection
-  database: workshops_test
+test:
+  adapter: postgresql
+  database: travis_ci_test
+  username: postgres
