@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'reports/subjects'
+  root 'visitors#index'
 
+  get 'reports/subjects'
   resources :students do
     get :subjects
   end
