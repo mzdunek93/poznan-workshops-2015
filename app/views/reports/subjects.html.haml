@@ -3,3 +3,7 @@
   list of subjects:
   - subject_items.each do |subject_item|
     .subject-item
+      .subject-title= subject_item.title_with_assigned_teacher
+      .subject-students
+        Students: 
+        = subject_item.students.collect(&:decorate).collect(&:full_name).join(', ')
