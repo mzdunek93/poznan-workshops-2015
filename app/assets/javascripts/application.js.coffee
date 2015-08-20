@@ -24,7 +24,7 @@ ready = ->
     clearBtn: true
     defaultViewDate:
       year: 1993
-      month: 3
+      month: 4
       day: 22
 
   $(".datepicker").on 'focus', ->
