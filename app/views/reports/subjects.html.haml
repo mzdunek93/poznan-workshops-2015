@@ -6,4 +6,4 @@
       .subject-title= subject_item.title_with_assigned_teacher
       .subject-students
         Students: 
-        = subject_item.students.collect(&:decorate).collect(&:full_name).join(', ')
+        = subject_item.students.collect(&:decorate).collect(&:full_name_with_birthdate).join(', ')

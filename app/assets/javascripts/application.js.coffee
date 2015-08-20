@@ -14,4 +14,22 @@
 #= require jquery_ujs
 #= require turbolinks
 #= require bootstrap-sprockets
+#= require bootstrap-datepicker
 #= require_tree .
+
+ready = ->
+  $('.datepicker').datepicker
+    format: 'dd MM yyyy'
+    endDate: 'today'
+    clearBtn: true
+    defaultViewDate:
+      year: 1993
+      month: 3
+      day: 22
+
+  $(".datepicker").on 'focus', ->
+    $('div.datepicker').css('top', parseInt($('div.datepicker').css('top')) + 55)
+
+
+$(document).ready(ready)
+$(document).on('page:load', ready)

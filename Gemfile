@@ -21,6 +21,7 @@ gem 'gretel'
 gem 'devise'
 gem 'decent_decoration'
 gem 'faker'
+gem 'bootstrap-datepicker-rails'
 
 group :development do
   gem 'better_errors'

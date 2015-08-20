@@ -4,6 +4,6 @@ class TeacherDecorator < BaseDecorator
   end
 
   def full_name_with_title
-    "#{first_name} #{last_name} [#{academic_title}]"
+    "#{full_name} [#{academic_title}]"
   end
 end
