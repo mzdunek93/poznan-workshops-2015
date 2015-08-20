@@ -42,4 +42,19 @@ feature 'User edits student' do
     visit report_subjects_path
     expect(page).to have_content 'Jan Abacki'
   end
+
+  scenario 'by adding birthdate' do
+    visit report_subjects_path
+    expect(page).to have_no_content '(born 1993-04-22)'
+
+    visit students_path
+    find(:xpath, "//a[@title='edit']").click
+    fill_in 'Birthdate', with: '22 April 1993'
+    find("input[type='checkbox']").set(true)
+    click_button 'Update Student'
+    expect(page).to have_content '1993-04-22'
+
+    visit report_subjects_path
+    expect(page).to have_content '(born 1993-04-22)'
+  end
 end
