@@ -1,7 +1,14 @@
 rvm:
-  - 2.2.0
+- 2.2.0
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
-  - cp config/database.yml.sample config/database.yml
+- psql -c 'create database travis_ci_test;' -U postgres
+- cp config/database.yml.sample config/database.yml
 addons:
   postgresql: '9.3'
+deploy:
+  provider: heroku
+  api_key:
+    secure: QJ/KFQxIlhF35tGdqLiDUMgA4ZlWtSHnFouZe9mTYrbBdjCwJT3sevGhMn12vrteMY97CWuQ3EhN/KG5mMFkVAb+6I8EuhJKGid1j2D3cMy21pY5x1AhjgjEjqbl/EdKm0o6BpgFyjP+V7nAsWcvSjyfTQC4KIwCoLTSY+pFdMjHyivoazN3ZtgaL2PUQ3Jpgxx3EhFo84Iru2YtCsU9Crc9FQGItwLKex3SIm8xm8uloYjQQduG09776/vMEr7uI5hzK7BUHhUjoIXnO+TzCKBrhCkRpubUzLohyodVvlUToCD9PoH2UD+V+Z9CnF/kk2xJYVdB5lBXlGNm0nMsdscnahF2OOdnE/vBrEtb+tHFmWHOMxBlIL1D34z4RyYZDMc+JMypzASiJIht1vy99Vxh94AtaUj6k9W8wQv/AwhoqwJwiWkaz9eVgUyJ39jGMNL3wFmbWMafwViLNHIaoGjgaUG3sh/UrgQtIelBDeeI3C0XZFafoTysqIBS8AjUAYbsDmWgKVsaH84My1vf7bTHD7RuoCNl0olyG0xSH5elgNTgOvIQ1cV5BVvcXb0n4vrYkv9Jsl14UkzvoOw0xtWZq/r9RrOWX9zCkzR9R+0cLCmITN0TlOt5ZBnYbur9cfffq+kV6YDNl5Af2MW0GXyKRRqIV9usNFklEdAWcYI=
+  app: fierce-dawn-5114
+  on:
+    repo: mzdunek93/poznan-workshops-2015

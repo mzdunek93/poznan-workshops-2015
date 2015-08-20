@@ -20,6 +20,7 @@ gem 'dotenv-rails'
 gem 'gretel'
 gem 'devise'
 gem 'decent_decoration'
+gem 'faker'
 
 group :development do
   gem 'better_errors'
@@ -28,12 +29,12 @@ group :development do
   gem 'rails_layout'
   gem 'spring-commands-rspec'
   gem 'quiet_assets'
+  gem 'travis'
 end
 
 group :development, :test do
   gem 'byebug'
   gem 'factory_girl_rails'
-  gem 'faker'
   gem 'rspec-rails'
   gem 'spring'
   gem 'web-console', '~> 2.0'
