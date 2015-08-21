@@ -55,6 +55,6 @@ feature 'User edits student' do
     expect(page).to have_content '1993-04-22'
 
     visit report_subjects_path
-    expect(page).to have_content '(born 1993-04-22)'
+    expect(page).to have_content '1993-04-22'
   end
 end
