@@ -14,3 +14,4 @@ deploy:
     repo: mzdunek93/poznan-workshops-2015
   run:
     - "rake db:reset"
+    - "rake assets:precompile"
