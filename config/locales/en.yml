@@ -4,6 +4,7 @@ en:
     teachers: Teachers
     reports: Reports
     reports_subjects: Subjects
+    reports_payments: Payments
     logout: Logout
     signin: Sign in
     signup: Sign up
@@ -19,6 +20,7 @@ en:
     back: Back
     add_new_item: Add new one
     subjects: subjects
+  months:
   student:
     columns:
       first_name: first name
@@ -33,3 +35,18 @@ en:
     columns:
       full_name: Full name
       avg_notes: Notes average
+  payment:
+    columns:
+      student: Student
+      january: January
+      february: February
+      march: March
+      april: April
+      may: May
+      june: June
+      july: July
+      august: August
+      september: September
+      october: October
+      november: Novermber
+      december: December

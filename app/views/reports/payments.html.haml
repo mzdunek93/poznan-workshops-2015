@@ -1,0 +1,20 @@
+- breadcrumb :payments
+%table.table.table-condensed.payments
+  %thead
+    %tr
+      %th= t('payment.columns.student')
+      %th= t('payment.columns.january')
+      %th= t('payment.columns.february')
+      %th= t('payment.columns.march')
+      %th= t('payment.columns.april')
+      %th= t('payment.columns.may')
+      %th= t('payment.columns.june')
+      %th= t('payment.columns.july')
+      %th= t('payment.columns.august')
+      %th= t('payment.columns.september')
+      %th= t('payment.columns.october')
+      %th= t('payment.columns.november')
+      %th= t('payment.columns.december')
+  %tbody
+    - payments.each do |payment|
+      = render 'payment', payment: payment

@@ -22,6 +22,7 @@ gem 'devise'
 gem 'decent_decoration'
 gem 'faker'
 gem 'bootstrap-datepicker-rails'
+gem 'jquery-datatables-rails', '~> 3.3.0'
 
 group :development do
   gem 'better_errors'

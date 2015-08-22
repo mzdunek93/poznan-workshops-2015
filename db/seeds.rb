@@ -19,9 +19,18 @@ teachers = Teacher.all
 end
 
 40.times do
-  Student.create!(
+  student = Student.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name
+  )
+  student.create_payment(
+    january: Faker::Date.backward(200),
+    february: Faker::Date.backward(200),
+    march: Faker::Date.backward(200),
+    april: Faker::Date.backward(200),
+    may: Faker::Date.backward(200),
+    june: Faker::Date.backward(200),
+    july: Faker::Date.backward(200)
   )
 end
 

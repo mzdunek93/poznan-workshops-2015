@@ -15,6 +15,8 @@
 #= require turbolinks
 #= require bootstrap-sprockets
 #= require bootstrap-datepicker
+#= require dataTables/jquery.dataTables
+#= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 #= require_tree .
 
 ready = ->
@@ -29,6 +31,8 @@ ready = ->
 
   $(".datepicker").on 'focus', ->
     $('div.datepicker').css('top', parseInt($('div.datepicker').css('top')) + 55)
+
+  $(".payments").DataTable()
 
 
 $(document).ready(ready)

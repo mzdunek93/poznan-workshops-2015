@@ -1,0 +1,4 @@
+%tr
+  %td= payment.student.decorate.full_name
+  - Payment.month_columns.each do |month|
+    %td= payment.send(month)
