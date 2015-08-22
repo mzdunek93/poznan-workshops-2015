@@ -44,6 +44,7 @@ db/*.sqlite3
 /cache
 /capybara*
 /capybara-*.html
+C:\\nppdf32Log\\debuglog.txt
 /gems
 /specifications
 rerun.txt
