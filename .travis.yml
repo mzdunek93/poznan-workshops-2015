@@ -17,5 +17,6 @@ deploy:
   on:
     repo: mzdunek93/poznan-workshops-2015
   run:
+    - "cp .env.sample .env"
     - "rake db:reset"
     - "rake assets:precompile"
