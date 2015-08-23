@@ -3,7 +3,7 @@ rvm:
 before_script:
 - psql -c 'create database travis_ci_test;' -U postgres
 - cp config/database.yml.sample config/database.yml
-- cp env.yml.sample env.yml
+- cp env.sample env
 addons:
   postgresql: '9.3'
 deploy:
