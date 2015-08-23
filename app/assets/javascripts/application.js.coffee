@@ -30,7 +30,7 @@ ready = ->
       day: 22
 
   $(".datepicker").on 'focus', ->
-    $('div.datepicker').css('top', parseInt($('div.datepicker').css('top')) + 55)
+    $('div.datepicker').css('top', parseInt($('div.datepicker').css('top')) + 105)
 
   $(".payments").DataTable()
 

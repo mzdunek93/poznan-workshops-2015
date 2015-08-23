@@ -1,11 +1,31 @@
 // color variables
 $lime-green: #32CD32;
+$dark-green: #157D25;
 $white: #FFFFFF;
+$semi-transparent-white: rgba(255,255,255,0.25);
+$content-shadow: 0 0 10px rgba(0,0,0,0.4);
+$border-divider: 1px dashed white;
 
 // override bootstrap variables
 $navbar-default-color: $white;
+$navbar-default-bg: $semi-transparent-white;
 $navbar-default-link-color: $white;
-$navbar-default-bg: $lime-green;
+$navbar-default-link-hover-color: $white;
+$navbar-default-link-hover-bg: rgba(255,255,255,0.3);
+$navbar-default-link-active-color: $white;
+$navbar-default-link-active-bg: rgba(255,255,255,0.5);
+$navbar-default-brand-hover-color: $white;
+$navbar-default-brand-hover-bg: rgba(255,255,255,0.3);
+$navbar-height: 60px;
+$dropdown-color: $white;
+$dropdown-bg: $semi-transparent-white;
+$dropdown-link-color: $white;
+$dropdown-link-hover-color: $white;
+$dropdown-link-hover-bg: rgba(255,255,255,0.3);
+$dropdown-link-active-color: $white;
+$dropdown-link-active-bg: rgba(255,255,255,0.5);
+$font-family-sans-serif: 'Open Sans';
+$link-color: $white;
 
 // import the CSS framework
 @import "bootstrap-sprockets";
@@ -17,8 +37,28 @@ $z-index-1: 100;
 $z-index-2: 200;
 
 // font-size
-$fs-0: 50px;
+$fs-0: 60px;
 
+//header font
+@font-face {
+  font-family: Montserrat;
+  src: asset-url('Montserrat-Black.otf') format("opentype");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: asset-url('Montserrat-SemiBold.otf') format("opentype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: asset-url('OpenSans-Regular.ttf');
+  font-weight: 400;
+}
+
+$font-header: Montserrat;
 
 // make all images responsive by default
 img {
@@ -29,6 +69,15 @@ img {
 // override for the 'Home' navigation link
 .navbar-brand {
   font-size: inherit;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+// change header font
+.navbar-default {
+  font-family: $font-header;
+  font-size: 15px;
+  box-shadow: $content-shadow;
 }
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
@@ -60,7 +109,7 @@ main {
   @extend .container;
   padding-bottom: 80px;
   width: 100%;
-  margin-top: 50px; // accommodate the navbar
+  margin-top: 100px; // accommodate the navbar
   padding: 0; // accommodate the navbar
 
   .container {
@@ -68,32 +117,60 @@ main {
   }
 }
 
+main .content-box {
+  background: $semi-transparent-white;
+  color: white;
+  padding: 15px;
+  margin-bottom: 30px;
+  box-shadow: $content-shadow;
+}
+
+.container {
+  width: 1200px;
+}
+
 section {
   @extend .row;
   margin-top: 20px;
 }
 
+html {
+  background: url(blackboard.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body {
+  background: none;
+}
+
 .bg {
   @include fixed(20px 0 left 0);
   @include sizing(100%);
-  background: url(blackboard.jpg) no-repeat center center;
-  background-size: cover;
   z-index: $z-index-1;
   top: 0;
+  perspective: 1500px;
 }
 
 .header {
   color: white;
-  text-shadow: black 0.3em 0.3em 0.3em;
   background:transparent;
+  font-family: $font-header;
   font-size: $fs-0;
+  font-weight: 900;
+  text-transform: uppercase;
   z-index: $z-index-2;
-  margin-top: 100px;
-  padding-left:  50px;
+  margin-top: 210px;
+  margin-left: 230px;
+  transform: rotateZ(-28deg) rotateY(40deg) rotateX(-40deg);
+  opacity: 0.7;
 }
 
 .breadcrumbs {
-  padding-bottom: 30px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  font-family: Montserrat;
+  font-size: 16px;
+  border-bottom: $border-divider;
 
   a:first-child {
     padding: 0 5px 0 0;
@@ -104,6 +181,28 @@ section {
   }
 }
 
+h1 {
+  font-family: Montserrat;
+  font-size: 18px;
+}
+
+h2 {
+  margin-top: 0px;
+}
+
 a:hover, a:focus {
   text-decoration: none;
+}
+
+.pagination > li > a {
+  color: $btn-default-color;
+}
+
+.table {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.table > tbody > tr > td {
+  vertical-align: middle;
 }
