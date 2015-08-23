@@ -3,14 +3,6 @@ class StudentDecorator < BaseDecorator
     "#{first_name} #{last_name}"
   end
 
-  def full_name_with_birthdate
-    if birthdate.present?
-      "#{full_name} (born #{birthdate})"
-    else
-      full_name
-    end
-  end
-
   def avg_notes(subject_item)
     "%.2f" % (subject_item_notes.for_subject_item(subject_item).average(:value) || 0)
   end

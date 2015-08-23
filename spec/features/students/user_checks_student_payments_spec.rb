@@ -4,6 +4,10 @@ feature 'User checks student payments' do
   let!(:student) { create :student, first_name: 'Jan', last_name: 'Nowak' }
   let!(:payment) { create :payment, january: '2015-08-22', student: student }
 
+  before(:all) do
+    Capybara.current_driver = :selenium
+  end
+
   before do
     visit report_payments_path
   end
@@ -16,5 +20,9 @@ feature 'User checks student payments' do
   scenario 'searching for non-existing student', js: true do
     fill_in 'Search', with: 'Krzysztof'
     expect(page).to have_no_content '2015-08-22'
+  end
+
+  after(:all) do
+    Capybara.use_default_driver
   end
 end

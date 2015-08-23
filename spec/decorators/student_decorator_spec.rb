@@ -9,22 +9,6 @@ describe StudentDecorator do
   let!(:note_1) { create :subject_item_note, value: 5, student: student, subject_item: second_subject_item }
   let!(:note_2) { create :subject_item_note, value: 4, student: student, subject_item: second_subject_item }
 
-  describe "#full_name_with_birthdate" do
-    describe "when student doesn't have birthdate assigned" do
-      subject { student.decorate.full_name_with_birthdate }
-      it "doesn't display birthdate" do
-        is_expected.to eq 'John Smith'
-      end
-    end
-
-    describe "when student has birthdate assigned" do
-      subject { second_student.decorate.full_name_with_birthdate }
-      it "displays birthdate" do
-       is_expected.to eq 'Jane Doe (born 1993-04-22)'
-     end
-    end
-  end
-
   describe "#full_name" do
     subject { student.decorate.full_name }
     it { is_expected.to eq 'John Smith' }
