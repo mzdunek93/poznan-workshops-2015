@@ -6,7 +6,6 @@ before_install:
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
   - cp config/database.yml.sample config/database.yml
-  - cp .env.sample .env
 addons:
   postgresql: '9.3'
 deploy:
@@ -17,6 +16,5 @@ deploy:
   on:
     repo: mzdunek93/poznan-workshops-2015
   run:
-    - "cp .env.sample .env"
     - "rake db:reset"
     - "rake assets:precompile"
